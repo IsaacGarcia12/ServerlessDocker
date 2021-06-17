@@ -1,0 +1,1 @@
+waitress-serve serverless_django.wsgi:application

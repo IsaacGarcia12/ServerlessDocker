@@ -1,0 +1,17 @@
+-- PARA PODER CORRER LA MIGRACION DE LA "BD" DE PRODUCCION
+SE UTILIZA EL COMANDO 
+python manage.py migrate --settings serverless_django.settings.production
+
+--  Se creo la carpeta de settings para poder tener listo las configuraciones de local y prod
+
+-- En la carpeta "settings" tenemos la preparacion del ambiente local y de production
+
+-- El comando BASE_DIR = Path(Path(__file__).resolve().parent).resolve().parent.parent
+    el cual esta en el local.py y production.py al inicio, se utilizo para poder crear
+    el .sqlite3 en la carpeta root justo donde esta el manage.py
+
+-- Se añadio la app pages para poder hacer una prueba rapida de como puede funcionar en diferentes ambinetes.
+-- Para poder correr lo de diferentes ambientes se utiliza el commando 
+python manage.py runserver --settings serverless_django.settings.production 
+
+-- Para produccion se utiliza gunicorn y para desarrollo waitress
